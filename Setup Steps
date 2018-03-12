@@ -1,0 +1,54 @@
+LINUX SERVER:
+Check for Python:
+    python -version
+    if not there then:
+        sudo apt-get(yum) install python
+
+Check for Java:
+    java -version
+    if not there then:
+        sudo apt-get(yum) install default-jre
+        sudo apt-get(yum) install default-jdk
+
+Check for Ant:
+    ant -version
+    if not there then:
+            sudo apt-get(yum) install ant
+
+Set ANT_HOME environment variable with:
+    export ANT_HOME=/usr/share/ant
+
+Update path with Ant bin:
+    PATH=$PATH:${ANT_HOME}/bin
+
+Navigate to ANT_HOME/lib
+Download and extract the Salesforce Migration Tool library
+Leave the .jar file and delete the rest
+
+Install BottlePy:
+    sudo pip install bottle
+
+TODO
+Pull down project folder from google drive.
+copy simple salesforce library to python location
+Put project folder in approprite location
+??usr/shared/refresh-tool/
+Run the web-interface script to start the listener
+
+
+
+
+
+SALESFORCE:
+Add remote site setting for callout endpoint
+Add the post refresh class
+Permission set with white listed ip of hosting server
+
+
+
+TODO
+Visualforce Page for Interface:
+interface controller:
+interface controller test:
+Custom Setting:
+    End point for the requests

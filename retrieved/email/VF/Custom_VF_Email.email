@@ -1,0 +1,10 @@
+<messaging:emailTemplate subject="Test VF Email" recipientType="Contact" >
+<messaging:plainTextEmailBody >
+Congratulations!
+This is your new Visualforce Email Template.
+We will be talking about Accounts today.
+https://test.salesforce.com
+
+Thank you for your time!
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>
