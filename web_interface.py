@@ -13,9 +13,9 @@ app = application = default_app()
 
 @route('/refreshtool/oncompleterefresh/<org_name>/<server>')
 def on_complete_refresh(org_name, server):
-    print(org_name)
-    controller_.RefreshMethods.on_complete_refresh(org_name, server)
     response.status = 200
+    yield response
+    controller_.RefreshMethods.on_complete_refresh(org_name, server)
     return response
 
 if __name__ == '__main__':
