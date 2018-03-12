@@ -40,7 +40,7 @@ Switch to bit bucket instead of git
 SALESFORCE:
 Add remote site setting for callout endpoint
 Add the post refresh class
-Permission set with white listed ip of hosting server
+Add the refresh tool ip as a trusted Ip address
 
 
 
@@ -50,3 +50,9 @@ interface controller:
 interface controller test:
 Custom Setting:
     End point for the requests
+
+
+
+DIFFERENCES:
+The directory shortcut variables need ./ for windows but nothing for linux in the controller
+build.xml needs to have the salesforce jar file updated.
