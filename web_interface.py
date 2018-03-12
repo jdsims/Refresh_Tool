@@ -6,13 +6,14 @@
 # copies of the Software as provided in a License Agreement, all rights are
 # reserved.
 
-from bottle import get, run, default_app, response
+from bottle import route, run, default_app, response
 import controller as controller_
 
 app = application = default_app()
 
-@get('/refreshtool/oncompleterefresh/<org_name>/<server>')
+@route('/refreshtool/oncompleterefresh/<org_name>/<server>')
 def on_complete_refresh(org_name, server):
+    print(org_name)
     controller_.RefreshMethods.on_complete_refresh(org_name, server)
     response.status = 200
     return response
