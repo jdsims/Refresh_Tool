@@ -50,3 +50,11 @@ interface controller:
 interface controller test:
 Custom Setting:
     End point for the requests
+
+
+
+
+
+DIFFERENCES:
+The directory shortcut variables need ./ for windows but nothing for linux in the controller
+build.xml needs to have the salesforce jar file updated.
