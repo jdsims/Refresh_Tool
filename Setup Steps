@@ -28,12 +28,10 @@ Leave the .jar file and delete the rest
 Install BottlePy:
     sudo pip install bottle
 
+Add a custom TCP rule for port 8000 to the server
+
 TODO
-Pull down project folder from google drive.
-copy simple salesforce library to python location
-Put project folder in approprite location
-??usr/shared/refresh-tool/
-Run the web-interface script to start the listener
+Switch to bit bucket instead of git
 
 
 
