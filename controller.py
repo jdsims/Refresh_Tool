@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 # Copyright © 2017 - 2018 Acumen Solutions, Inc. The Sandbox Refresh Tool was
 # created by Acumen Solutions. Except for the limited rights to use and make
 # copies of the Software as provided in a License Agreement, all rights are
@@ -235,7 +238,7 @@ class RefreshMethods():
             with open(directory + fileName) as file:
                 for line in file:
                     if line.strip().startswith('<' + tag_name + '>'):
-                        print(f'Found a matching {tag_name} in {fileName}')
+                        print('Found a matching {tag_name} in {fileName}')
                         line = line.replace(original, replacement)
                     updatedLines.append(line)
             with open(directory + fileName, 'w') as file:
