@@ -42,13 +42,13 @@ class RefreshMethods():
     TOGGLE = 'toggle'
     SETTING = 'setting'
     COPY_TOGGLE = 'copyToggle'
-    WORKFLOW_PATH = './toggle/workflows/'
-    OBJECT_PATH = './toggle/objects/'
-    TRIGGER_PATH = './toggle/triggers/'
-    FLOW_PATH = './toggle/flowDefinitions/'
-    RETRIEVED_OBJECT_PATH = './retrieved/objects/'
-    RETRIEVED_WORKFLOW_PATH = './retrieved/workflows/'
-    RETRIEVED_EMAIL_PATH = './retrieved/email/'
+    WORKFLOW_PATH = 'toggle/workflows/'
+    OBJECT_PATH = 'toggle/objects/'
+    TRIGGER_PATH = 'toggle/triggers/'
+    FLOW_PATH = 'toggle/flowDefinitions/'
+    RETRIEVED_OBJECT_PATH = 'retrieved/objects/'
+    RETRIEVED_WORKFLOW_PATH = 'retrieved/workflows/'
+    RETRIEVED_EMAIL_PATH = 'retrieved/email/'
 
     # List out the triggers that need to be disabled
     triggers_to_toggle = (
