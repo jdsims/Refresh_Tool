@@ -27,6 +27,8 @@ def get_refresh_options():
 
 @post('/refreshtool/runselected/<org_name>/<server>')
 def run_selected():
+    org = org_name
+    serv = server
     print(request.body)
     steps = request.json
     print(steps)
