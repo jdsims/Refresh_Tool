@@ -66,14 +66,20 @@ class RefreshMethods():
     @staticmethod
     def on_complete_refresh(org_name, server):
         RefreshMethods().save_connection_information(org_name, server)
-        refreshOptions = RefreshOptions()
-        refreshOptions.refresh_main_refresh_steps()
+        refresh_options = RefreshOptions()
+        refresh_options.refresh_main_refresh_steps()
 
     @staticmethod
     def run_specified_steps(org_name, server, steps):
+        refresh_options = RefreshOptions()
         RefreshMethods().save_connection_information(org_name, server)
+        method_dict = {}
+        for func in dir(RefreshOptions):
+            if func.startswith('refresh_'):
+                method_dict[string.capwords(func.replace('refresh_','').replace('_', ' '))] = func
         for step in steps:
-            print(step)
+            method = getattr(refresh_options, method_dict[step])
+            method()
 
     @staticmethod
     def save_connection_information(org_name, server):
