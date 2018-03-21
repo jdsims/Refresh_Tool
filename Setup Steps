@@ -34,7 +34,7 @@ Add a custom TCP rule for port 8000 to the server
 
 TODO
 Switch to bit bucket instead of git
-
+Remove the login information when not running the main steps
 
 
 

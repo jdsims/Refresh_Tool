@@ -72,6 +72,8 @@ class RefreshMethods():
     @staticmethod
     def run_specified_steps(org_name, server, steps):
         RefreshMethods().save_connection_information(org_name, server)
+        for step in steps:
+            print(step)
 
     @staticmethod
     def save_connection_information(org_name, server):

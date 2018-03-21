@@ -26,13 +26,9 @@ def get_refresh_options():
     return response
 
 @post('/refreshtool/runselected/<org_name>/<server>')
-def run_selected():
-    org = org_name
-    serv = server
-    print(request.body)
-    steps = request.json
-    print(steps)
-    #controller_.RefreshMethods.run_specified_steps(org_name, server, steps)
+def run_selected(org_name, server):
+    steps = json.load(request.body)
+    controller_.RefreshMethods.run_specified_steps(org_name, server, steps)
     response.status = 200
     return response
 
