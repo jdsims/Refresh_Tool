@@ -12,6 +12,7 @@ from os import mkdir, listdir
 from simple_salesforce import Salesforce
 from datetime import datetime
 import xml.etree.ElementTree as ET
+import string
 import time
 import getpass
 import sys
