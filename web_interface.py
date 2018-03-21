@@ -6,7 +6,7 @@
 # copies of the Software as provided in a License Agreement, all rights are
 # reserved.
 
-from bottle import route, run, default_app, response, request
+from bottle import get, post, run, default_app, response, request
 import controller as controller_
 import json
 
