@@ -65,21 +65,20 @@ class RefreshMethods():
 
     @staticmethod
     def on_complete_refresh(org_name, server):
-        save_connection_information(org_name, server)
+        RefreshMethods().save_connection_information(org_name, server)
         refreshOptions = RefreshOptions()
         refreshOptions.refresh_main_refresh_steps()
 
     @staticmethod
     def run_specified_steps(org_name, server, steps):
-	save_connection_information(org_name, server)
-	
+        RefreshMethods().save_connection_information(org_name, server)
 
     @staticmethod
     def save_connection_information(org_name, server):
-	admin_username = 'adminuser@refreshautomation.com.' + org_name
-	admin_password = 'useradmin1'
-	server = server
-	RefreshMethods.save_login_info(admin_username, admin_password, "", 'https://' + server + '.salesforce.com')
+        admin_username = 'adminuser@refreshautomation.com.' + org_name
+        admin_password = 'useradmin1'
+        server = server
+        RefreshMethods.save_login_info(admin_username, admin_password, "", 'https://' + server + '.salesforce.com')
 
     @staticmethod
     def save_login_info(username, password, security_token, server):

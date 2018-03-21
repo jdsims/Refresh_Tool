@@ -48,6 +48,8 @@ interface controller:
 custom metadata type
 
 Todo:
+disable submit button on click.
+Possibly loading screen
 Make sure is lightening compatible
 possbily make sure things are only run once
 tab for visualforce page
