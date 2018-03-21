@@ -183,12 +183,20 @@ class RefreshMethods():
         return url_example
 
     @staticmethod
-    def get_refresh_options():
-        """Return the list of methods in class RefreshOptions that
+    def get_refresh_options_display():
+        """Return the list of method display names in class RefreshOptions that
             are prepended with "refresh_".
         """
-        REFRESH_PREFIX = 'refresh_'
-        method_list = [func for func in dir(RefreshOptions) if func.startswith(REFRESH_PREFIX)]
+        method_list = [func.display_name for func in dir(RefreshOptions) if func.startswith('refresh_')]
+        method_list.sort()
+        return method_list
+
+    @staticmethod
+    def get_refresh_options():
+        """Return the list of method display names in class RefreshOptions that
+            are prepended with "refresh_".
+        """
+        method_list = [func for func in dir(RefreshOptions) if func.startswith('refresh_')]
         method_list.sort()
         return method_list
 
@@ -370,17 +378,20 @@ class RefreshOptions():
         self.methods.update_hardcoded_email_template('Custom_VF_Email', 'login', 'test', 'https://')
         self.methods.call_shell('ant deploy')
         self.methods.call_shell('ant deployCopyToggle')
+    refresh_main_refresh_steps.display_name = 'Main Refresh Steps'
 
     def refresh_fix_admin_emails(self):
         """Fix emails on admin users.
         """
         self.methods.call_shell('ant deployFixAdminEmails')
         self.methods.queue_apex_batch('RefreshApex1')
+    refresh_fix_admin_emails.display_name = 'Fix Admin Emails'
 
     def refresh_create_test_records(self):
         """Create test data records.
         """
         self.methods.call_shell('ant deployCreateTestRecords')
         self.methods.queue_apex_batch('RefreshApex2')
+    refresh_create_test_records.display_name = 'Create Test Records'
 
 # End the update script steps #################################################

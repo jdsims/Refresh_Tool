@@ -30,6 +30,8 @@ Install BottlePy:
 
 Add a custom TCP rule for port 8000 to the server
 
+
+
 TODO
 Switch to bit bucket instead of git
 
@@ -56,4 +58,5 @@ interface controller test:
 
 DIFFERENCES:
 The directory shortcut variables need ./ for windows but nothing for linux in the controller
+Linux needs the python comments at the top of the files
 build.xml needs to have the salesforce jar file updated.

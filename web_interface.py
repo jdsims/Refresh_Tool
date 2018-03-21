@@ -20,7 +20,7 @@ def on_complete_refresh(org_name, server):
 
 @route('/refreshtool/getrefreshoptions')
 def get_refresh_options():
-    options = json.dumps(controller_.RefreshMethods.get_refresh_options())
+    options = json.dumps(controller_.RefreshMethods.get_refresh_options_display())
     response.status = 200
     response.body = options
     return response
@@ -29,10 +29,11 @@ def get_refresh_options():
 def run_selected():
     for l in request.body:
         print l
-    print request.body.readlines()
-    controller_.RefreshMethods.run_specified_steps(org_name, server, steps)
+    steps = request.json
+    print steps
+    #controller_.RefreshMethods.run_specified_steps(org_name, server, steps)
     response.status = 200
     return response
 
 if __name__ == '__main__':
-	run(host='172.31.32.57', port=8000, debug=True)
+    run(host='172.31.32.57', port=8000, debug=True)
