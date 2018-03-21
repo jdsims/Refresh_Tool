@@ -6,16 +6,32 @@
 # copies of the Software as provided in a License Agreement, all rights are
 # reserved.
 
-from bottle import route, run, default_app, response
+from bottle import route, run, default_app, response, request
 import controller as controller_
+import json
 
 app = application = default_app()
 
 @route('/refreshtool/oncompleterefresh/<org_name>/<server>')
 def on_complete_refresh(org_name, server):
-    response.status = 200
-    yield response
     controller_.RefreshMethods.on_complete_refresh(org_name, server)
+    response.status = 200
+    return response
+
+@route('/refreshtool/getrefreshoptions')
+def get_refresh_options():
+    options = json.dumps(controller_.RefreshMethods.get_refresh_options())
+    response.status = 200
+    response.body = options
+    return response
+
+@route('/refreshtool/runselected/<org_name>/<server>')
+def run_selected():
+    for l in request.body:
+        print l
+    print request.body.readlines()
+    controller_.RefreshMethods.run_specified_steps(org_name, server, steps)
+    response.status = 200
     return response
 
 if __name__ == '__main__':

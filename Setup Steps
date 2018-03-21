@@ -41,15 +41,16 @@ SALESFORCE:
 Add remote site setting for callout endpoint
 Add the post refresh class
 Add the refresh tool ip as a trusted Ip address
-
-
-
-TODO
 Visualforce Page for Interface:
 interface controller:
+custom metadata type
+
+Todo:
+Make sure is lightening compatible
+possbily make sure things are only run once
+tab for visualforce page
 interface controller test:
-Custom Setting:
-    End point for the requests
+
 
 
 
